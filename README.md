@@ -42,7 +42,7 @@ Gap buffer通过在当前光标位置维护一个"间隙"，实现高效的文�
 
 ```go
 // 创建一个新的gap buffer
-buffer := gapbuffer.New()
+buffer := buffer.New()
 
 // 插入文本
 buffer.InsertAt(0, "Hello, 世界!")
@@ -77,26 +77,6 @@ buffer.ReplaceRune(10, 15, "「替换文本」")
 
 // 获取文本中Unicode字符的数量
 charCount := buffer.RuneLength()
-```
-
-## 运行示例
-
-要运行演示gap buffer功能的示例程序：
-
-```bash
-go run cmd/gapbuffer/main.go
-```
-
-要测试性能（包括对100MB文件的操作）：
-
-```bash
-go run cmd/perftest/main.go
-```
-
-要测试Unicode支持：
-
-```bash
-cd cmd/unicodetest && go run .
 ```
 
 ## 性能
